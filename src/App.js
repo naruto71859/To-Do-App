@@ -1,16 +1,13 @@
-import React from 'react';
+import React from "react";
 
-import './App.css';
-import Groupeoflist from './components/Groupeoflist';
-
-
+import "./App.css";
+import Groupeoflist from "./components/Groupeoflist";
 
 function App() {
   return (
-    <div className="App">
-      <Groupeoflist/>
-      
-      
+    <div className="App ">
+      <Groupeoflist />
+     
     </div>
   );
 }

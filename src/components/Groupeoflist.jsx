@@ -21,13 +21,13 @@ function Groupeoflist({ text = "test" ,Tasks = [ ],  handelAddtask = () => {},  
                 placeholder="Search"
                 aria-label="Search"
                 value={text}
-                onChange={event => handelInput(event.target.value)}
+                onChange={event => handelInput(event.target.value)} //payload
               />
             </div>
             <button //////////////////////////////// add button
               type="button"
               className="btn btn-outline-light btn-lg btn-add"
-              onClick={() => handelAddtask({ id, text, complete: false })}
+              onClick={() => handelAddtask({ id, text, complete: false })} //payload
             >
               Add New Task
             </button>
@@ -64,13 +64,13 @@ const mapStateToProps = state => {
 };
 const mapDispatchToProps = dispatch => {
   return {
-    handelAddtask: payload => dispatch(ADDTASK(payload)), // Task:obj
+    handelAddtask: payload => dispatch(ADDTASK(payload)),  //obj
+    handelInput: payload => dispatch(SETINPUT(payload)) // string
+};}
 
-    handelInput: payload => dispatch(SETINPUT(payload)) // text
-  };
-};
 const GroupeoflistContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Groupeoflist);
+
 export default GroupeoflistContainer;

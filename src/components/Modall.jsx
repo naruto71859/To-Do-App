@@ -46,9 +46,9 @@ Modal.setAppElement('#root')
  
   render() {
     return (
-      <span className=''>
+      <span className='col-auto'>
         <button 
-        className='btn btn-success m-2'
+        className='btn btn-success '
         onClick={this.openModal}>Open Modal</button>
         <Modal
           isOpen={this.state.modalIsOpen}

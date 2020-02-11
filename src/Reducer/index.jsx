@@ -7,7 +7,7 @@ import {
 } from "../Const/constType";
 
 const initState = {
-  Tasks: [{}],
+  Tasks: [],
   input: ""
 };
 // const counter=0
@@ -26,7 +26,6 @@ const GofList = (state = initState, action) => {
       }); //id
     // return {...state,Tasks:state.Tasks.filter((el, i) => el.id !== action.payload)}; //id
     case set_Complete:
-      console.log(state.Tasks);
       return {
         ...state,
         Tasks: state.Tasks.map((el, i) =>
@@ -34,12 +33,14 @@ const GofList = (state = initState, action) => {
         )
       };
     case set_Edit:
-      console.log(action.payload)
       return {
         ...state,
         Tasks: state.Tasks.map((el, i) =>
-          el.id === action.payload.id ? { ...el, text: action.payload.text, complete:false } : el
-        ),input:''
+          el.id === action.payload.id
+            ? { ...el, text: action.payload.text, complete: false }
+            : el
+        ),
+        input: ""
       };
     default:
       return state;
